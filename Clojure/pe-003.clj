@@ -1,5 +1,3 @@
-;(Math/pow 4 0.5)
-;(Math/floor 1.2)
 (defn is-prime-number? [n]
     (loop [x (int (Math/floor (Math/pow n 0.5)))]
         (if (= x 1)
@@ -15,8 +13,8 @@
             x
             (recur (dec x)))))
 
-;;This approach is too slow
-;;-------------
+;;The above approach is too slow
+
 (defn largest-prime-factor2 [n]
     (loop [cur-num n f 2 lpf 1]
         (if (> (Math/pow f 2) cur-num)
