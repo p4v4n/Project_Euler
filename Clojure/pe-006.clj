@@ -1,8 +1,12 @@
 (defn squares-of-sum [n]
-	(Math/pow (/ (* n (inc n)) 2) 2))
+	(->> (range 1 (inc n))
+		 (reduce +)
+		 (#(* % %))))
 
 (defn sum-of-squares [n]
-	(/ (* n (inc n) (inc (* 2 n))) 6))
+	(->> (range 1 (inc n))
+		 (map #(* % %))
+		 (reduce +)))
 
 (defn sum-square-difference [n]
 	(int (- (squares-of-sum n) (sum-of-squares n))))
