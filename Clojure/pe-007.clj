@@ -7,10 +7,10 @@
                 (recur (dec x))))))
 
 (defn nth-prime [n]
-	(->> (range)
-		 (drop 2)
-		 (filter is-prime-number?)
-		 (take n)
-		 (last)))
+    (->> (range)
+         (drop 2)
+         (filter is-prime-number?)
+         (take n)
+         (last)))
 
 (println (nth-prime 10001))
